@@ -1,0 +1,9 @@
+<div class="posts-container">
+  @for (post of posts; track post.username) {
+    <div class="post">
+      <h3>{{ post.username }}</h3>
+      <img src="./assets/img/{{post.img}}" class="post-image">
+      <p>{{ post.likes }} Likes</p>
+    </div>
+  }
+</div>
