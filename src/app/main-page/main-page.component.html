@@ -4,6 +4,13 @@
       <h3>{{ post.username }}</h3>
       <img src="./assets/img/{{post.img}}" class="post-image">
       <p>{{ post.likes }} Likes</p>
+      
+      @if (post.isliked) {
+       <img src="./../../assets/img/heart-black.png" alt="not liked" (click)="toggleLike(post)"> 
+      } @else {
+       <img src="./../../assets/img/heart-red.png" alt="liked" (click)="toggleLike(post)">
+      }
     </div>
   }
 </div>
+<a routerLink="contact">Contact</a>
