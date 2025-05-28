@@ -1,0 +1,11 @@
+<div class="post">
+      <h3>{{ singlepost.username }}</h3>
+      <img src="./assets/img/{{singlepost.img}}" class="post-image">
+      <p>{{ singlepost.likes }} Likes</p>
+      
+      @if (singlepost.isliked) {
+       <img src="./../../assets/img/heart-black.png" alt="not liked" (click)="toggleLike(singlepost)"> 
+      } @else {
+       <img src="./../../assets/img/heart-red.png" alt="liked" (click)="toggleLike(singlepost)">
+      }
+    </div>

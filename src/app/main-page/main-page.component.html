@@ -1,16 +1,6 @@
 <div class="posts-container">
   @for (post of posts; track post.username) {
-    <div class="post">
-      <h3>{{ post.username }}</h3>
-      <img src="./assets/img/{{post.img}}" class="post-image">
-      <p>{{ post.likes }} Likes</p>
-      
-      @if (post.isliked) {
-       <img src="./../../assets/img/heart-black.png" alt="not liked" (click)="toggleLike(post)"> 
-      } @else {
-       <img src="./../../assets/img/heart-red.png" alt="liked" (click)="toggleLike(post)">
-      }
-    </div>
+  <app-single-post [singlepost]="post"></app-single-post>
   }
 </div>
 <a routerLink="contact">Contact</a>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { SinglePostComponent } from './single-post/single-post.component';
 
-interface Post {
+export interface Post {
   username: string;
   img: string;
   likes: number;
@@ -12,7 +13,7 @@ interface Post {
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, SinglePostComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss'
 })
@@ -39,13 +40,4 @@ export class MainPageComponent {
     }
   ]
 
-  toggleLike(post: Post) {
-    if (post.isliked) {
-      post.isliked = !post.isliked
-      post.likes -= 1
-    } else {
-      post.isliked = !post.isliked
-      post.likes += 1
-    }
-  }
 }
